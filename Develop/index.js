@@ -139,6 +139,9 @@ function init() {
 
 // Function call to initialize app
 init()
+.then(questionsInstall => {
+    return installPrompt(questionsInstall);
+})
 .then(fileData => {
     console.log(fileData); 
     return generateMarkdown(fileData);
