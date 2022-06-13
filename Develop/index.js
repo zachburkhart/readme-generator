@@ -120,11 +120,6 @@ const questions = [
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, err => {
-        if (err) {
-            rejects(err);
-            console.log('err');
-            return;
-        }
         return "File created!";
     })
 }
@@ -139,15 +134,12 @@ function init() {
 
 // Function call to initialize app
 init()
-.then(questionsInstall => {
-    return installPrompt(questionsInstall);
-})
 .then(fileData => {
     console.log(fileData); 
     return generateMarkdown(fileData);
 })
-.then(readmeMD => {
-    return writeToFile(readmeMD);
+.then(generatedReadme => {
+    return writeToFile('./generated-readme/generated-readme.md', generatedReadme);
 })
 .catch(err => {
     console.log(err);
