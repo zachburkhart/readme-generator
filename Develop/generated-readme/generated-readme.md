@@ -2,7 +2,7 @@
   # Sample Readme
 
   ## Table of Contents
-  - [Description] (#description)
+  - [Description] (## Description)
   - [Installation] (#installation)
   - [Usage] (#usage)
   - [License] (#license)
