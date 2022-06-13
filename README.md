@@ -4,9 +4,9 @@
 An app that generates a high-quality README file that meets the minimum criteria from the professional README guide: https://coding-boot-camp.github.io/full-stack/github/professional-readme-guide
 
 ## Built With
-Node.js
-JavaScript
-Inquirer
+- Node.js
+- JavaScript
+- Inquirer
 
 ## Installation & Usage
 1. Clone the code in this repository to your device
