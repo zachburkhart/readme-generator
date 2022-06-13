@@ -1,5 +1,4 @@
 // TODO: Include packages needed for this application
-const { rejects } = require('assert');
 const fs = require('fs');
 const inquirer = require('inquirer');
 const generateMarkdown = require('./utils/generateMarkdown.js');
@@ -132,8 +131,21 @@ function writeToFile(fileName, data) {
 
 // TODO: Create a function to initialize app
 function init() {
-    return inquire.prompt(questions);
+    return inquirer.prompt(questions)
+    .then(fileData => {
+        return fileData;
+    })
 }
 
 // Function call to initialize app
-init();
+init()
+.then(fileData => {
+    console.log(fileData); 
+    return generateMarkdown(fileData);
+})
+.then(readmeMD => {
+    return writeToFile(readmeMD);
+})
+.catch(err => {
+    console.log(err);
+});
