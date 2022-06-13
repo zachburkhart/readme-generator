@@ -31,8 +31,88 @@ const questions = [
     },
     {
         type: 'input',
-        name: 'table-of-contents'
-    }
+        name: 'installation',
+        message: 'Please enter installation instructions.',
+        validate: installationInput => {
+            if (installationInput) {
+                return true;
+            } else {
+                console.log('You need to enter installation instructions!');
+                return false;
+            }
+        }
+    },
+    {
+        type: 'input',
+        name: 'usage',
+        message: 'Please enter usage instructions.',
+        validate: usageInput => {
+            if (usageInput) {
+                return true;
+            } else {
+                console.log('You need to enter usage instructions!');
+                return false;
+            }
+        }
+    },
+    {
+        type: 'list',
+        name: 'license',
+        message: 'Please select a license.',
+        choices: ["None of the above", "All of the above"]
+    },
+    {
+        type: 'input',
+        name: 'contributing',
+        message: 'Can users contribute? If so, what should they do?',
+        validate: contributeInput => {
+            if (contributeInput) {
+                return true;
+            } else {
+                console.log('You need to enter contribute instructions!');
+                return false;
+            }
+        }
+    },
+    {
+        type: 'input',
+        name: 'testing',
+        message: 'Please enter testing instructions.',
+        validate: testingInput => {
+            if (testingInput) {
+                return true;
+            } else {
+                console.log('You need to enter testing instructions!');
+                return false;
+            }
+        }
+    },
+    {
+        type: 'input',
+        name: 'username',
+        message: 'Please enter your GitHub username.',
+        validate: usernameInput => {
+            if (usernameInput) {
+                return true;
+            } else {
+                console.log('You need to enter a username!');
+                return false;
+            }
+        }
+    },
+    {
+        type: 'input',
+        name: 'email',
+        message: 'Please enter your email address.',
+        validate: emailInput => {
+            if (emailInput) {
+                return true;
+            } else {
+                console.log('You need to enter a repository name!');
+                return false;
+            }
+        }
+    },
 ];
 
 // TODO: Create a function to write README file
